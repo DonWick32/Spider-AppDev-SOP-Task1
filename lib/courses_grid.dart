@@ -6,7 +6,7 @@ import './courses_item.dart';
 import './courses_provider.dart';
 
 class CoursesGrid extends StatelessWidget {
-  
+
   @override
   Widget build(BuildContext context) {
     final coursesData = Provider.of<Courses>(context);
@@ -20,8 +20,8 @@ class CoursesGrid extends StatelessWidget {
         child: CourseItem (
           //courses[i].course_code, 
           //courses[i].course_name,
-          ),
-          ) ,
+        ),
+      ) ,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 3 / 2, crossAxisSpacing: 10, mainAxisSpacing: 10,),
     );
   }

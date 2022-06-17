@@ -18,19 +18,19 @@ class CourseItem extends StatelessWidget {
     //final course = Provider.of<Course>(context);
     return Consumer<Course>(
       builder: (ctx, course, _) => GestureDetector(
-      onTap: () {
-        Navigator.of(context).pushNamed(CourseDetailScreen.routeName, arguments: course.course_code);
-      },
-      child : GridTile(
-        child: Align(
-          alignment: Alignment.center,
-          child: Text(course.course_name, textAlign: TextAlign.center, style: TextStyle(fontSize: 20),),
+        onTap: () {
+          Navigator.of(context).pushNamed(CourseDetailScreen.routeName, arguments: course.course_code);
+        },
+        child : Container(
+          color: Colors.lightBlue,
+          child: GridTile(
+            child: Center(child: Text(course.course_name, textAlign: TextAlign.center, style: TextStyle(fontSize: 20,),)),
+            footer: GridTileBar(
+              backgroundColor: Colors.black54,
+              title: Text(course.course_code, textAlign: TextAlign.center,),
+            ),
+          ),
         ),
-        footer: GridTileBar(
-          backgroundColor: Colors.black54,
-          title: Text(course.course_code, textAlign: TextAlign.center,),
-        ),
-      ),
       ),
 
     );

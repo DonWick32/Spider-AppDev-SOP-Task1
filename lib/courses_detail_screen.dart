@@ -7,9 +7,9 @@ import 'dart:math';
 
 import './courses_provider.dart';
 
-double roundDouble(double value, int places){ 
-   num mod = pow(10.0, places); 
-   return ((value * mod).round().toDouble() / mod); 
+double roundDouble(double value, int places){
+  num mod = pow(10.0, places);
+  return ((value * mod).round().toDouble() / mod);
 }
 
 class CourseDetailScreen extends StatelessWidget {
@@ -23,24 +23,24 @@ class CourseDetailScreen extends StatelessWidget {
     final courseCode = ModalRoute.of(context)?.settings.arguments as String;
     final loadedCourse = Provider.of<Courses>(context, listen: false).findByCourseCode(courseCode);
     if (loadedCourse.classes_attended == 0){
-              loadedCourse.percentage = "N.A.";
-            }
+      loadedCourse.percentage = 0;
+    }
     else {
       loadedCourse.percentage = roundDouble(loadedCourse.classes_attended / (loadedCourse.classes_attended + loadedCourse.classes_missed) * 100,2);
     }
-  
+
     return Scaffold(
       appBar: AppBar(
         title: Text(loadedCourse.course_code),
-        ),
+      ),
       body: SingleChildScrollView (
         child: Column(
           children: <Widget>[
             SizedBox(height: 10),
             Container(
-              height: 50,
-              width: double.infinity,
-              child: Text(loadedCourse.course_name, textAlign: TextAlign.center, style: TextStyle(fontSize: 30),)
+                height: 50,
+                width: double.infinity,
+                child: Text(loadedCourse.course_name, textAlign: TextAlign.center, style: TextStyle(fontSize: 30), overflow: TextOverflow.ellipsis)
             ),
             SizedBox(height: 5),
             Text("Course code : ${loadedCourse.course_code}", textAlign: TextAlign.center, style: TextStyle(fontSize: 20),),

@@ -7,7 +7,7 @@ import './courses_grid.dart';
 import './courses_screen.dart';
 
 class CoursesOverview extends StatelessWidget {
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

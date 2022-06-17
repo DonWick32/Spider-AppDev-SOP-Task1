@@ -27,6 +27,6 @@ class UserCourseItem extends StatelessWidget {
           }, color: Theme.of(context).errorColor,),
         ]),
       ),
-      );
+    );
   }
 }

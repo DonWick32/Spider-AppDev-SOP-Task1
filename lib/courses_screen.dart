@@ -16,17 +16,17 @@ class CourseScreen extends StatelessWidget {
     final coursesData = Provider.of<Courses>(context);
     return Scaffold(
       appBar: AppBar(
-          title: Text("Your Courses"),
-          actions: <Widget>[
-            IconButton(icon: Icon(Icons.add), onPressed: () {
-              Navigator.of(context).pushNamed(EditCourseScreen.routeName);
-            },),
-          ],
-        ),
+        title: Text("Your Courses"),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.add), onPressed: () {
+            Navigator.of(context).pushNamed(EditCourseScreen.routeName);
+          },),
+        ],
+      ),
       body : Padding (
         padding: EdgeInsets.all(8),
         child: ListView.builder(
-          itemCount: coursesData.items.length, 
+          itemCount: coursesData.items.length,
           itemBuilder: (_,i) => Column(
             children: [
               UserCourseItem(
@@ -34,9 +34,9 @@ class CourseScreen extends StatelessWidget {
               ),
               Divider(),
             ],
+          ),
         ),
       ),
-      ),
-      );
+    );
   }
 }

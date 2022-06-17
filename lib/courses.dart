@@ -11,10 +11,10 @@ class Course with ChangeNotifier {
   var percentage;
 
   Course ({
-    required this.course_code, 
-    required this.course_name, 
-    this.classes_attended = 0, 
+    required this.course_code,
+    required this.course_name,
+    this.classes_attended = 0,
     this.classes_missed = 0,
     this.percentage = 0,
-    });
+  });
 }

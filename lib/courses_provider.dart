@@ -34,21 +34,21 @@ class Courses with ChangeNotifier {
     return _items.firstWhere((cour) => cour.course_code == courseCode);
   }
 
-  void updateCourse(String course_code, Course course){
-    final courseIndex = _items.indexWhere((cour) => cour.course_code == course_code);
+  void updateCourse(String initial, String course_code, Course course){
+    final courseIndex = _items.indexWhere((cour) => cour.course_code == initial);
     if (courseIndex >= 0) {
       _items[courseIndex] = course;
       notifyListeners();
     }
     else {
       final newCourse = Course(
-      course_code: course.course_code, 
-      course_name: course.course_name,
-      classes_attended: course.classes_attended,
-      classes_missed: course.classes_missed, 
-    );
-    _items.add(newCourse);
-    notifyListeners();
+        course_code: course.course_code,
+        course_name: course.course_name,
+        classes_attended: course.classes_attended,
+        classes_missed: course.classes_missed,
+      );
+      _items.add(newCourse);
+      notifyListeners();
     }
   }
 
