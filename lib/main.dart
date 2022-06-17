@@ -1,3 +1,4 @@
+// @dart=2.9
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, prefer_const_literals_to_create_immutables, sort_child_properties_last, unused_local_variable
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
